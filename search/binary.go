@@ -15,7 +15,8 @@ import (
  * 	-> output: 3
  */
 func FindItemBinarySearch(arr []int, element int) int {
-	return abstractBinarySearch(arr, element, anyElement)
+	lastIndex := len(arr) - 1
+	return recursiveBinarySearch(arr, element, 0, lastIndex)
 }
 
 /**
@@ -54,6 +55,10 @@ const (
 	lastElement
 )
 
+/**
+ * An abstract function for binary search in array search for the first occurrence, the last one
+ * or the occurrence in any position.
+ */
 func abstractBinarySearch(arr []int, element int, searchType searchType) int {
 	left := 0
 	right := len(arr) - 1
@@ -71,7 +76,6 @@ func abstractBinarySearch(arr []int, element int, searchType searchType) int {
 		} else if arr[curr] > element {
 			right = curr - 1
 		} else {
-
 			switch searchType {
 			case firstElement:
 				right = curr - 1
@@ -90,4 +94,25 @@ func abstractBinarySearch(arr []int, element int, searchType searchType) int {
 	}
 
 	return lastFound
+}
+
+/**
+ * That is just another way to do binary search. It uses recursion instead of a for loop.
+ */
+func recursiveBinarySearch(arr []int, element, begin, end int) int {
+	if begin <= end {
+		middle := int(math.Floor((float64(begin) + float64(end)) / 2))
+
+		if arr[middle] == element {
+			return middle
+		}
+
+		if element < arr[middle] {
+			return recursiveBinarySearch(arr, element, begin, middle-1)
+		} else {
+			return recursiveBinarySearch(arr, element, middle+1, end)
+		}
+	}
+
+	return -1
 }
