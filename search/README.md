@@ -30,16 +30,13 @@ The binary search has some difference when compared to a linear search, for inst
 - it requires an sorted array
 - it does not require to iterate over all the items of the array.
 
-Leaving aside the sorting complexy and assuming we are receiving a ordered array, lest compare the execution complexity for an array with 10000 (10ˆ3) where the item is on the 9998 position of the array.
+Leaving aside the sorting complexy and assuming we are receiving a ordered array, let's compare the execution complexity for an array with 10000 (10ˆ3) where the item is on the 9998 position of the array.
 
-Using a the **linear search** the loop would go over all the itens in the array to find the last iten of the array. That is the worst case, so the function complexity would behave this way:
-- For an array with 10000 items it will iterate 10000 times in the worst case.
-- For an array with 100 items it will iterate 1000 times in the worst case
-- For an array with 19 items it will iterate 19 times in the worst case.
+Using a the **linear search** the loop would go over all the itens in the array to find the last item of the array. That is the worst case, so the function with 10000 items will iterate 10000 times in the worst case.
 
-`O(n)`
+Complexity: `O(n)`
 
-Using a **binary search** the loop will iterate much less time as the algorithm reduces the search size in half each iteration. Eg.:
+Using a **binary search** the loop will iterate much less times as the algorithm reduces the search size in half each iteration. Eg.:
 - For an array with with 10000 items it will for the worst case (inexistent value in the array):
 ```
 #1   10000 -> check the item 5000
@@ -59,7 +56,7 @@ Using a **binary search** the loop will iterate much less time as the algorithm 
 END
 ```
 
-As you can see for the example with 10000 itens, instead of iterating 10ˆ3 times on the array, with a binary search is possible to itarete 14 in the worst case.
+As you can see for the example with 10000 itens, instead of iterating 10ˆ3 times on the array, with a binary search is possible to iterate 14 in the worst case.
 `O(log n)`
 
 ## Implementation
@@ -68,4 +65,4 @@ There are two implementation for binary search in the samples.
 - One of the use a for loop that is interrupted once the condition is found. 
 - The other one use a recursion to check the array with reduced array as the algorithm does not find the item in the current step.
 
-Take a look on the code to go further.
+Take a look on the code to understand it deeper.
