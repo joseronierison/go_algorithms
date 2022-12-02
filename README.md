@@ -19,7 +19,7 @@ and
 $ make test
 ```
 
-## Using it as to study:
+## How to use:
 
 Each folder contains its own README with a brief exaplantion of the code. Also the code has some comments with didatic purposes.
 Ex.:
