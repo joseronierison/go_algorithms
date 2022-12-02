@@ -1,6 +1,6 @@
 # Go Algorithms
 
-Here you will find some examples of the algorithms and data structure implementations using GoLang, sometimes using more the one approach to achieve the same result as a way to fully understand to concepts.
+Here you will find some examples of the algorithms and data structure implementations using GoLang. Sometimes using more then one approach to achieve the same result as a way to fully present to concepts.
 
 ## Dependencies
 # GoLang 1.9
